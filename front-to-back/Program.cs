@@ -19,13 +19,13 @@ var app = builder.Build();
 //    pattern: "{ controller = Home}/{ action = Index}/{ id ?}"    
 
 //);
+app.MapControllerRoute(
+            name: "areas",
+            pattern: "{area:exists}/{controller=dashboard}/{action=Index}/{id?}"
+);
 
 app.MapDefaultControllerRoute();
 
-app.MapControllerRoute(
-            name: "areas",
-            pattern: "{area:exists}/{controller= dashboard}/{action=Index}/{id?}"
-);
 app.UseStaticFiles();
 app.Run();
 
